@@ -1,11 +1,16 @@
 package com.example.androidhometasks.ht1.menu
 
+import com.example.androidhometasks.ht1.myInterface.ParsingString
+import com.example.androidhometasks.ht1.taskParsingFromBrackets.ParsingStringFromBrackets
+import com.example.androidhometasks.ht1.taskParsingWithoutBrackets.ParsingStringWithoutBrackets
 import com.example.androidhometasks.ht1.taskSequentialInput.SequentialInputNumbersAndOperations
 
 class Menu {
+
     fun printMenu(): Double {
         var flag = true;
         var result = 0.0
+        var parsingString: ParsingString
         do {
             println("\t---CALCULATOR---")
             println(
@@ -17,11 +22,19 @@ class Menu {
             )
             when (val value = readLine()) {
                 "1" -> {
-                    println("$value последовательный ввод")
+                    println("$value. последовательный ввод")
                     result = SequentialInputNumbersAndOperations().getIntAndOperation()
                 }
-                "2" -> println("2")
-                "3" -> println("3")
+                "2" -> {
+                    println("$value. парсинг выражения без скобок")
+                    parsingString = ParsingStringWithoutBrackets()
+                    result = parsingString.resultSum()
+                }
+                "3" -> {
+                    println("$value. парсинг выражения со скобками")
+                    parsingString = ParsingStringFromBrackets()
+                    result = parsingString.resultSum()
+                }
                 "4" -> flag = false
                 else -> println("Not")
             }

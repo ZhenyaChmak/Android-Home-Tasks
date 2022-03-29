@@ -1,10 +1,10 @@
 package com.example.androidhometasks.ht1.taskSequentialInput
 
 class SequentialInputNumbersAndOperations {
+
     private var number1: Double = 0.0
     private var number2: Double = 0.0
     private var operation: String? = ""
-
 
     fun getIntAndOperation(): Double {
         var flag = true
@@ -59,4 +59,5 @@ class SequentialInputNumbersAndOperations {
                 else -> 0.0
             }
         }
+
 }
