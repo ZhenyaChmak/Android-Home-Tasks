@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/fragment_calculator.xml" value="0.25" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/fragment_counter.xml" value="0.1890625" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/fragment_item_history.xml" value="0.33" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/layout/fragment_recyclerview_history_calculator.xml" value="0.33" />
+        <entry key="..\:/study/projects/AndroidHomeTasks/app/src/main/res/menu/menu_calculator.xml" value="0.1890625" />
       </map>
     </option>
   </component>
