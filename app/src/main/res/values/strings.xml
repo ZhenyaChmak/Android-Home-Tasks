@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android Home Tasks</string>
+    <string name="app_name">Calculator</string>
     <string name="Calculator">Calculator</string>
     <string name="_7">7</string>
     <string name="clear">clear</string>
@@ -19,5 +19,6 @@
     <string name="division">/</string>
     <string name="history">History</string>
     <string name="_3">3</string>
+
 
 </resources>

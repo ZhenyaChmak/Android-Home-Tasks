@@ -8,7 +8,7 @@ open class ParsingStringWithoutBrackets : ParsingString {
     override fun resultSum(): Double {
         val list = getInputString()
         var counter = 0
-        var resultSum: Double = 0.0
+        var resultSum = 0.0
         val tempListString = mutableListOf<String>()
         for (i in list.indices) {
 
@@ -94,10 +94,4 @@ open class ParsingStringWithoutBrackets : ParsingString {
         return string
     }
 
-    /*  private fun checkInput(input: String): Boolean {
-          val integetChars = '0'..'9'
-          val operationsChars = charArrayOf('-', '+', '/', '*')
-          return input.all { it in integetChars && input.count() > 1 && it in operationsChars }
-      }*/
-
-}
+ }

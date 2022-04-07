@@ -6,13 +6,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidhometasks.R
 import com.example.androidhometasks.databinding.FragmentCalculatorBinding
-import com.example.androidhometasks.ht1.myInterface.ParsingString
-import java.lang.reflect.InvocationTargetException
+import com.example.androidhometasks.pushFragment
 
 class CalculatorFragment : Fragment() {
 
     private var _binding: FragmentCalculatorBinding? = null
     private val binding get() = requireNotNull(_binding)
+    private var list = mutableListOf<String>()
+
+    private var tempString: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,8 +70,14 @@ class CalculatorFragment : Fragment() {
                         val temp = result.toLong()
                         if (result == temp.toDouble()) {
                             textViewResult.text = result.toLong().toString()
+                            tempString = " ${textView.text} = ${textViewResult.text}"
+                            list.add(tempString)
+                            tempString = ""
                         } else {
                             textViewResult.text = result.toString()
+                            tempString = " ${textView.text} = ${textViewResult.text}"
+                            list.add(tempString)
+                            tempString = ""
                         }
                     }
                 } catch (e: Exception) {
@@ -82,11 +90,15 @@ class CalculatorFragment : Fragment() {
                 }
             }
 
+            toolbarCalculator.setOnMenuItemClickListener {
+                pushFragment(list)
+                true
+            }
         }
 
     }
 
-    fun setTextView(string: String) {
+    private fun setTextView(string: String) {
         if (binding.textViewResult.text != "") {
             binding.textView.text = binding.textViewResult.text
             binding.textViewResult.text = ""
