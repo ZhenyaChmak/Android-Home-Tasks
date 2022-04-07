@@ -28,6 +28,7 @@ class CalculatorHistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+
             recyclerviewHistory.layoutManager = LinearLayoutManager(view.context)
 
             recyclerviewHistory.adapter =
