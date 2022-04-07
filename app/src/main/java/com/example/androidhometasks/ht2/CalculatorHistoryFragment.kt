@@ -29,12 +29,16 @@ class CalculatorHistoryFragment : Fragment() {
 
         with(binding) {
 
+            toolbarHistory.setNavigationOnClickListener {
+                navigatorFragmentBack().onBackPressed()
+                true
+            }
+
             recyclerviewHistory.layoutManager = LinearLayoutManager(view.context)
 
             recyclerviewHistory.adapter =
-                requireArguments().getStringArrayList(KEY_LIST)?.let {HistoryAdapter(it)}
+                requireArguments().getStringArrayList(KEY_LIST)?.let { HistoryAdapter(it) }
         }
-
 
     }
 

@@ -98,6 +98,7 @@ class CalculatorFragment : Fragment() {
 
     }
 
+
     private fun setTextView(string: String) {
         if (binding.textViewResult.text != "") {
             binding.textView.text = binding.textViewResult.text
