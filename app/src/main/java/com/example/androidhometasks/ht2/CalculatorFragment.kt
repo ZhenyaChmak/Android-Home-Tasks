@@ -2,6 +2,7 @@ package com.example.androidhometasks.ht2
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidhometasks.R
@@ -32,21 +33,21 @@ class CalculatorFragment : Fragment() {
         with(binding) {
             toolbarCalculator.inflateMenu(R.menu.menu_calculator)
 
-            button0.setOnClickListener { setTextView(button0.text.toString()) }
-            button1.setOnClickListener { setTextView(button1.text.toString()) }
-            button2.setOnClickListener { setTextView(button2.text.toString()) }
-            button3.setOnClickListener { setTextView(button3.text.toString()) }
-            button4.setOnClickListener { setTextView(button4.text.toString()) }
-            button5.setOnClickListener { setTextView(button5.text.toString()) }
-            button6.setOnClickListener { setTextView(button6.text.toString()) }
-            button7.setOnClickListener { setTextView(button7.text.toString()) }
-            button8.setOnClickListener { setTextView(button8.text.toString()) }
-            button9.setOnClickListener { setTextView(button9.text.toString()) }
+            button0.initClickListener()
+            button1.initClickListener()
+            button2.initClickListener()
+            button3.initClickListener()
+            button4.initClickListener()
+            button5.initClickListener()
+            button6.initClickListener()
+            button7.initClickListener()
+            button8.initClickListener()
+            button9.initClickListener()
 
-            buttonDivision.setOnClickListener { setTextView(buttonDivision.text.toString()) }
-            buttonPlus.setOnClickListener { setTextView(buttonPlus.text.toString()) }
-            buttonMinus.setOnClickListener { setTextView(buttonMinus.text.toString()) }
-            buttonMultiply.setOnClickListener { setTextView(buttonMultiply.text.toString()) }
+            buttonDivision.initClickListener()
+            buttonPlus.initClickListener()
+            buttonMinus.initClickListener()
+            buttonMultiply.initClickListener()
 
             buttonClear.setOnClickListener {
                 textView.text = ""
@@ -96,6 +97,10 @@ class CalculatorFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun Button.initClickListener() = setOnClickListener {
+        setTextView(this.text.toString())
     }
 
 

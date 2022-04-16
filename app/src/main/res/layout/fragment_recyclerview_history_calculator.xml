@@ -18,7 +18,8 @@
         android:id="@+id/recyclerview_History"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/fragment_item_history" />
+        tools:listitem="@layout/fragment_item_history"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
 

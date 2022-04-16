@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidhometasks.databinding.FragmentRecyclerviewHistoryCalculatorBinding
 
 class CalculatorHistoryFragment : Fragment() {
@@ -30,11 +29,11 @@ class CalculatorHistoryFragment : Fragment() {
         with(binding) {
 
             toolbarHistory.setNavigationOnClickListener {
-                navigatorFragmentBack().onBackPressed()
-                true
+                parentFragmentManager.popBackStack()
+                //      navigatorFragmentBack().onBackPressed()
             }
 
-            recyclerviewHistory.layoutManager = LinearLayoutManager(view.context)
+            //      recyclerviewHistory.layoutManager = LinearLayoutManager(view.context)
 
             recyclerviewHistory.adapter =
                 requireArguments().getStringArrayList(KEY_LIST)?.let { HistoryAdapter(it) }
