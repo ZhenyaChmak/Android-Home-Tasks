@@ -1,14 +1,15 @@
 package com.example.androidhometasks.ht1.taskParsingWithoutBrackets
 
 import com.example.androidhometasks.ht1.myInterface.ParsingString
+import java.lang.Exception
 
-class ParsingStringWithoutBrackets : ParsingString {
+open class ParsingStringWithoutBrackets : ParsingString {
 
     override fun resultSum(): Double {
         val list = getInputString()
         var counter = 0
         var resultSum = 0.0
-        var tempListString = mutableListOf<String>()
+        val tempListString = mutableListOf<String>()
         for (i in list.indices) {
 
             if (i == 0) {
@@ -35,7 +36,7 @@ class ParsingStringWithoutBrackets : ParsingString {
 
             if (list[i] == "*" || list[i] == "/") {
                 if (list[i] == "/" && list[i + 1] == "0") {
-                    println("Exception")
+                    throw Exception("Деление на 0")
                 } else {
                     resultSum = when (list[i]) {
                         "*" -> tempListString[counter - 1].toDouble() * list[i + 1].toDouble()
@@ -59,18 +60,19 @@ class ParsingStringWithoutBrackets : ParsingString {
                 counter++
             }
         }
-        println("сумма = $resultSum")
-        println("----------------------------------")
+
+        //  println("сумма = $resultSum")
+        //  println("----------------------------------")
         return resultSum
     }
 
-    private fun getInputString(): List<String> {
+    protected open fun getInputString(): List<String> {
         println("Введите строку:")
         val string: String = readLine().toString()
         return formattingInputString(string)
     }
 
-    private fun formattingInputString(value: String): List<String> {
+    open fun formattingInputString(value: String): List<String> {
         value.replace(" ", "")
         val string = mutableListOf<String>()
         var tempString = ""
@@ -92,10 +94,4 @@ class ParsingStringWithoutBrackets : ParsingString {
         return string
     }
 
-    /*  private fun checkInput(input: String): Boolean {
-          val integetChars = '0'..'9'
-          val operationsChars = charArrayOf('-', '+', '/', '*')
-          return input.all { it in integetChars && input.count() > 1 && it in operationsChars }
-      }*/
-
-}
+ }

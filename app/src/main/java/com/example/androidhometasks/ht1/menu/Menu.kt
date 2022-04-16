@@ -8,7 +8,6 @@ import com.example.androidhometasks.ht1.taskSequentialInput.SequentialInputNumbe
 class Menu {
 
     fun printMenu(): Double {
-        var flag = true;
         var result = 0.0
         var parsingString: ParsingString
         do {
@@ -33,12 +32,13 @@ class Menu {
                 "3" -> {
                     println("$value. парсинг выражения со скобками")
                     parsingString = ParsingStringFromBrackets()
+
                     result = parsingString.resultSum()
                 }
-                "4" -> flag = false
+                "4" -> break
                 else -> println("Not")
             }
-        } while (flag)
+        } while (true)
         return result
     }
 
